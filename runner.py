@@ -15,8 +15,8 @@ class Runner:
             if k == "'" or k == '"':
                 result.append(k)
                 in_quotes = not in_quotes
-            elif k in characters.characters.values() and not in_quotes:
-                result.append(self.get_char(k))
+            elif k.lower() in characters.characters.values() and not in_quotes:
+                result.append(self.get_char(k.lower()) if k.islower() else self.get_char(k.lower()).upper())
             else:
                 result.append(k)
         return ''.join(result)

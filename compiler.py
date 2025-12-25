@@ -11,8 +11,8 @@ class Compiler:
             if k == "'" or k == '"':
                 result.append(k)
                 in_quotes = not in_quotes
-            elif k in characters.characters and not in_quotes:
-                result.append(characters.characters[k])
+            elif k.lower() in characters.characters and not in_quotes:
+                result.append(characters.characters[k.lower()] if k.islower() else characters.characters[k.lower()].upper())
             else:
                 result.append(k)
         return ''.join(result)
