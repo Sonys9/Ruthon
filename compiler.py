@@ -23,5 +23,5 @@ class Compiler:
             self.converted_content = self.etoc(self.file_content)
 
     def save(self):
-        with open(self.file_name.replace('.py', '.rupy'), 'w') as f:
+        with open(self.file_name.replace('.py', '.пй'), 'w') as f:
             f.write(self.converted_content)
